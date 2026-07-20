@@ -1,0 +1,21 @@
+node_modules/
+.env
+.env.local
+*.log
+jmeter.log
+.DS_Store
+Thumbs.db
+
+# Artefactos generados por las corridas.
+# Se versionan los DATOS de la ejecución (JUnit XML, .jtl, statistics.json y
+# los resúmenes en markdown), no los dashboards HTML: son megas de assets de
+# vendor que se regeneran con un comando y ensucian el historial.
+**/05-reports/playwright/
+**/05-reports/test-results/
+**/05-reports/jmeter/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+cypress/videos/
+cypress/screenshots/

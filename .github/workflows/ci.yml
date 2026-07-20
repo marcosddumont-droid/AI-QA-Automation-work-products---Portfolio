@@ -1,0 +1,103 @@
+name: QA Portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Regresión nocturna: 03:00 UTC (00:00 ART)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    name: E2E · ${{ matrix.sitio }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - sitio: 01-saucedemo
+            script: test:01
+          - sitio: 02-practice-software-testing
+            script: test:02
+          - sitio: 05-the-internet
+            script: test:05
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Instalar navegadores
+        run: npx playwright install --with-deps chromium firefox
+
+      - name: Ejecutar suite
+        run: npm run ${{ matrix.script }}
+
+      - name: Publicar reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-${{ matrix.sitio }}
+          path: ${{ matrix.sitio }}/05-reports/
+          retention-days: 14
+
+  api-postman:
+    name: API · Postman/Newman
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Instalar Newman
+        run: npm install -g newman
+      - name: Levantar el mock local
+        run: node tools/mock-api/server.js &
+      - name: Esperar a que el mock responda
+        run: npx wait-on http://localhost:3001/api/health --timeout 30000
+      - name: Ejecutar colección
+        run: newman run 01-saucedemo/03-automation/postman/mock-api.postman_collection.json
+
+  performance:
+    name: Performance · k6
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar k6
+        run: |
+          sudo gpg -k
+          sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update && sudo apt-get install -y k6
+      - name: Levantar el mock local
+        run: node tools/mock-api/server.js &
+      - name: Ejecutar prueba de carga
+        run: k6 run 01-saucedemo/03-automation/k6/carga-mock.js
+
+  calidad:
+    name: Lint y typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint

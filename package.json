@@ -1,0 +1,35 @@
+{
+  "name": "qa-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio de QA · testing E2E, API, performance y accesibilidad sobre 5 aplicaciones",
+  "type": "module",
+  "scripts": {
+    "mock": "node tools/mock-api/server.js",
+
+    "test:01": "playwright test --config=01-saucedemo/03-automation/playwright/playwright.config.ts",
+    "test:02": "playwright test --config=02-practice-software-testing/03-automation/playwright/playwright.config.ts",
+    "test:03": "playwright test --config=03-parabank/03-automation/playwright/playwright.config.ts",
+    "test:05": "playwright test --config=05-the-internet/03-automation/playwright/playwright.config.ts",
+    "test:04": "cypress run --project 04-orangehrm/03-automation/cypress",
+    "test:04:open": "cypress open --project 04-orangehrm/03-automation/cypress",
+
+    "test:playwright": "npm run test:01 && npm run test:02 && npm run test:03 && npm run test:05",
+    "test:smoke": "npm run test:01 -- --grep @smoke && npm run test:02 -- --grep @smoke && npm run test:03 -- --grep @smoke && npm run test:05 -- --grep @smoke",
+
+    "test:postman": "newman run 01-saucedemo/03-automation/postman/mock-api.postman_collection.json && newman run 02-practice-software-testing/03-automation/postman/practice-api.postman_collection.json",
+
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@eslint/js": "^9.17.0",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "cypress": "^13.17.0",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1"
+  }
+}

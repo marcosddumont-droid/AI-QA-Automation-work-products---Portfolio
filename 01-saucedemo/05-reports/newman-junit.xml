@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="QA Portfolio · Mock API" tests="7" time="0.500">
+  <testsuite name="API-01 · Health check" id="a24c7df6-c38f-4879-a743-f7c049b96c79" timestamp="2026-07-20T03:45:51.025Z" tests="3" failures="0" errors="0" time="0.056">
+    <testcase name="API-01 responde 200" time="0.056" classname="Api01HealthCheck"/>
+    <testcase name="API-01 el estado es ok" time="0.056" classname="Api01HealthCheck"/>
+    <testcase name="API-01 responde en menos de 500 ms" time="0.056" classname="Api01HealthCheck"/>
+  </testsuite>
+  <testsuite name="API-02 · Login exitoso" id="54a66c11-f371-4f5f-be82-1516af298bf2" timestamp="2026-07-20T03:45:51.025Z" tests="2" failures="0" errors="0" time="0.079">
+    <testcase name="API-02 responde 200" time="0.079" classname="Api02LoginExitoso"/>
+    <testcase name="API-02 devuelve un token" time="0.079" classname="Api02LoginExitoso"/>
+  </testsuite>
+  <testsuite name="API-03 · Login con credenciales inválidas" id="2d2c2e43-042c-4f12-ad8e-bd3fcf09ea3c" timestamp="2026-07-20T03:45:51.025Z" tests="3" failures="0" errors="0" time="0.079">
+    <testcase name="API-03 rechaza con 401" time="0.079" classname="Api03LoginConCredencialesInvalidas"/>
+    <testcase name="API-03 informa el motivo" time="0.079" classname="Api03LoginConCredencialesInvalidas"/>
+    <testcase name="API-03 no filtra un token" time="0.079" classname="Api03LoginConCredencialesInvalidas"/>
+  </testsuite>
+  <testsuite name="API-04 · Listar productos" id="5804d2ad-fcef-4444-94de-e809a57e3c75" timestamp="2026-07-20T03:45:51.025Z" tests="4" failures="0" errors="0" time="0.049">
+    <testcase name="API-04 responde 200" time="0.049" classname="Api04ListarProductos"/>
+    <testcase name="API-04 respeta el parámetro limit" time="0.049" classname="Api04ListarProductos"/>
+    <testcase name="API-04 informa el total real, no el limitado" time="0.049" classname="Api04ListarProductos"/>
+    <testcase name="API-04 cada producto tiene el contrato esperado" time="0.049" classname="Api04ListarProductos"/>
+  </testsuite>
+  <testsuite name="API-05 · Crear orden" id="aaef3e28-1adf-4e56-b6f7-b71804eb5247" timestamp="2026-07-20T03:45:51.025Z" tests="4" failures="0" errors="0" time="0.111">
+    <testcase name="API-05 responde 201" time="0.111" classname="Api05CrearOrden"/>
+    <testcase name="API-05 devuelve un id de orden" time="0.111" classname="Api05CrearOrden"/>
+    <testcase name="API-05 la orden queda confirmada" time="0.111" classname="Api05CrearOrden"/>
+    <testcase name="API-05 refleja los datos enviados" time="0.111" classname="Api05CrearOrden"/>
+  </testsuite>
+  <testsuite name="API-06 · Crear orden sin campos obligatorios" id="247efbc4-cc2b-4dca-904b-8b0718cb1316" timestamp="2026-07-20T03:45:51.025Z" tests="2" failures="0" errors="0" time="0.094">
+    <testcase name="API-06 rechaza con 422" time="0.094" classname="Api06CrearOrdenSinCamposObligatorios"/>
+    <testcase name="API-06 indica qué campos faltan" time="0.094" classname="Api06CrearOrdenSinCamposObligatorios"/>
+  </testsuite>
+  <testsuite name="API-07 · Endpoint inexistente" id="0b5ca9d6-678e-4680-9cad-32cd2d243dda" timestamp="2026-07-20T03:45:51.025Z" tests="2" failures="0" errors="0" time="0.032">
+    <testcase name="API-07 responde 404" time="0.032" classname="Api07EndpointInexistente"/>
+    <testcase name="API-07 el cuerpo del error es JSON" time="0.032" classname="Api07EndpointInexistente"/>
+  </testsuite>
+</testsuites>
