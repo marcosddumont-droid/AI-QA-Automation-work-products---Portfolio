@@ -1,8 +1,47 @@
-# QA Portfolio · Testing E2E multi-aplicación
+<div align="center">
+
+<!-- ============================================================
+     CARÁTULA — reemplazar los campos marcados con << >>
+     ============================================================ -->
+
+# 🧪 QA Portfolio
+
+### Testing E2E, API, Performance y Accesibilidad sobre 5 aplicaciones reales
+
+**\<\<NOMBRE COMPLETO\>\>** · \<\<TÍTULO PROFESIONAL\>\>
+\<\<CIUDAD, PAÍS\>\>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/TU-USUARIO)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:marcos.d.dumont@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TU-USUARIO)
+
+<br>
+
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=flat-square&logo=cypress&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![k6](https://img.shields.io/badge/k6-7D64FF?style=flat-square&logo=k6&logoColor=white)
+![JMeter](https://img.shields.io/badge/JMeter-D22128?style=flat-square&logo=apache&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/CI-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
+[![CI](https://github.com/TU-USUARIO/qa-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/TU-USUARIO/qa-portfolio/actions/workflows/ci.yml)
+
+<br>
+
+| Aplicaciones | Casos automatizados | Defectos hallados | Herramientas |
+|:---:|:---:|:---:|:---:|
+| **5** | **113** | **4** | **6** |
+
+<sub>113 casos distintos · 151 ejecuciones con la matriz de navegadores · 53 aserciones adicionales en Postman</sub>
+
+</div>
+
+---
 
 Portfolio de QA construido sobre **5 aplicaciones web distintas**, cada una con su ciclo completo de testing: plan de pruebas, casos documentados, automatización, ejecución y reportes.
 
-Todos los resultados de este documento provienen de **corridas reales verificadas**, no de estimaciones.
+Todos los resultados de este documento provienen de **corridas reales verificadas**, no de estimaciones. Las bitácoras de ejecución registran los 19 fallos que hubo durante el desarrollo —15 propios y 4 de las aplicaciones— con su diagnóstico completo, porque encontrar la causa raíz es la parte que importa.
 
 > **Empezá por acá:** [`00-introduccion/`](00-introduccion/) explica el objetivo, la estrategia y cómo está organizado todo.
 
