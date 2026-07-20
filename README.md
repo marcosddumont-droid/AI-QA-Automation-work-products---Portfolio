@@ -26,7 +26,7 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/CI-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
-[![CI](https://github.com/TU-USUARIO/qa-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/TU-USUARIO/qa-portfolio/actions/workflows/ci.yml)
+[![CI](https://github.com/marcosddumont-droid/AI-QA-Automation-work-products---Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/marcosddumont-droid/AI-QA-Automation-work-products---Portfolio/actions/workflows/ci.yml)
 
 <br>
 
