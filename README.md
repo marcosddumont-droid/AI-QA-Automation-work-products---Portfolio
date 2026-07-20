@@ -1,19 +1,20 @@
 <div align="center">
 
 <!-- ============================================================
-     CARÁTULA — reemplazar los campos marcados con << >>
+     CARÁTULA
+     Pendiente de reemplazar:
+       · TU-USUARIO-LINKEDIN  (badge de LinkedIn)
+       · TU-USUARIO/qa-portfolio  (badge de CI, según el repo real)
      ============================================================ -->
 
 # 🧪 QA Portfolio
 
 ### Testing E2E, API, Performance y Accesibilidad sobre 5 aplicaciones reales
 
-**\<\<NOMBRE COMPLETO\>\>** · \<\<TÍTULO PROFESIONAL\>\>
-\<\<CIUDAD, PAÍS\>\>
+**Marcos Dumont** · QA Engineer
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/TU-USUARIO)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/TU-USUARIO-LINKEDIN)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:marcos.d.dumont@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TU-USUARIO)
 
 <br>
 
@@ -136,5 +137,7 @@ Guía completa en [`00-introduccion/como-ejecutar.md`](00-introduccion/como-ejec
 
 ## Contacto
 
+**Marcos Dumont** · QA Engineer
+
 - **LinkedIn:** _completar_
-- **Email:** _completar_
+- **Email:** marcos.d.dumont@gmail.com
