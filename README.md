@@ -139,5 +139,5 @@ Guía completa en [`00-introduccion/como-ejecutar.md`](00-introduccion/como-ejec
 
 **Marcos Dumont** · QA Engineer
 
-- **LinkedIn:** _completar_
+- **LinkedIn:** linkedin.com/in/marcos-dumont
 - **Email:** marcos.d.dumont@gmail.com
