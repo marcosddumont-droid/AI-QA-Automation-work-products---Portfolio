@@ -1,0 +1,49 @@
+<testsuites id="" name="" tests="18" failures="0" skipped="0" errors="0" time="43.265909">
+<testsuite name="casos-borde.spec.ts" timestamp="2026-07-20T05:39:04.730Z" hostname="chromium-ui" tests="18" failures="0" skipped="0" time="83.653" errors="0">
+<testcase name="Carga diferida y sincronización › TC-01 elemento que aparece tras una demora @smoke" classname="casos-borde.spec.ts" time="8.641">
+</testcase>
+<testcase name="Carga diferida y sincronización › TC-02 elemento que se crea recién al terminar la carga @regression" classname="casos-borde.spec.ts" time="8.183">
+</testcase>
+<testcase name="Carga diferida y sincronización › TC-03 contenido que cambia en cada recarga @regression" classname="casos-borde.spec.ts" time="3.063">
+</testcase>
+<testcase name="Frames › TC-10 escribir dentro de un iframe @smoke" classname="casos-borde.spec.ts" time="24.847">
+<properties>
+<property name="fail" value="BUG-101: el editor TinyMCE está en modo solo lectura">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\casos-borde-Frames-TC-10-escribir-dentro-de-un-iframe-smoke-chromium-ui\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Frames › TC-11 frames anidados: leer cada uno @regression" classname="casos-borde.spec.ts" time="1.783">
+</testcase>
+<testcase name="Diálogos nativos del navegador › TC-20 aceptar un alert simple @smoke" classname="casos-borde.spec.ts" time="2.75">
+</testcase>
+<testcase name="Diálogos nativos del navegador › TC-21 cancelar un confirm @regression" classname="casos-borde.spec.ts" time="2.827">
+</testcase>
+<testcase name="Diálogos nativos del navegador › TC-22 completar un prompt con texto @regression" classname="casos-borde.spec.ts" time="2.612">
+</testcase>
+<testcase name="Ventanas y navegación › TC-30 una pestaña nueva se captura con el evento popup @smoke" classname="casos-borde.spec.ts" time="2.932">
+</testcase>
+<testcase name="Autenticación › TC-40 autenticación básica con credenciales en el contexto @smoke" classname="casos-borde.spec.ts" time="2.692">
+</testcase>
+<testcase name="Autenticación › TC-41 login con credenciales válidas @smoke" classname="casos-borde.spec.ts" time="3.506">
+</testcase>
+<testcase name="Autenticación › TC-42 login con contraseña incorrecta @regression" classname="casos-borde.spec.ts" time="3.298">
+</testcase>
+<testcase name="Interacciones complejas › TC-50 subir un archivo @smoke" classname="casos-borde.spec.ts" time="2.723">
+</testcase>
+<testcase name="Interacciones complejas › TC-51 menú contextual dispara un alert @regression" classname="casos-borde.spec.ts" time="2.456">
+</testcase>
+<testcase name="Interacciones complejas › TC-52 tabla ordenable: ordenar por columna @regression" classname="casos-borde.spec.ts" time="2.787">
+</testcase>
+<testcase name="Interacciones complejas › TC-53 hover revela información oculta @regression" classname="casos-borde.spec.ts" time="2.696">
+</testcase>
+<testcase name="Respuestas del servidor › TC-60 códigos de estado HTTP @regression" classname="casos-borde.spec.ts" time="3.121">
+</testcase>
+<testcase name="Respuestas del servidor › TC-61 descarga de archivo disponible @regression" classname="casos-borde.spec.ts" time="2.736">
+</testcase>
+</testsuite>
+</testsuites>

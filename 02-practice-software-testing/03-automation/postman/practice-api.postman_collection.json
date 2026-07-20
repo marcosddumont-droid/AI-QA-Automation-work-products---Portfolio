@@ -1,0 +1,256 @@
+{
+  "info": {
+    "name": "Practice Software Testing · API",
+    "description": "Cobertura declarativa de la API pública del toolshop.\n\nSolo operaciones de LECTURA: es un backend compartido con otras personas que lo usan para aprender, así que no se crean ni modifican recursos.\n\nEjecución:\n  newman run practice-api.postman_collection.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://api.practicesoftwaretesting.com" },
+    { "key": "primerProductoId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "API-01 · Listar productos",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-01 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const body = pm.response.json();",
+              "",
+              "pm.test('API-01 la respuesta viene paginada', () => {",
+              "  pm.expect(body).to.have.property('current_page', 1);",
+              "  pm.expect(body).to.have.property('total');",
+              "  pm.expect(body.data).to.be.an('array').that.is.not.empty;",
+              "});",
+              "",
+              "pm.test('API-01 cada producto cumple el contrato', () => {",
+              "  body.data.forEach((p) => {",
+              "    pm.expect(p.id, 'id').to.be.a('string').and.not.empty;",
+              "    pm.expect(p.name, 'name').to.be.a('string').and.not.empty;",
+              "    pm.expect(p.price, 'price').to.be.a('number').and.to.be.above(0);",
+              "  });",
+              "});",
+              "",
+              "// Se encadena para las requests siguientes.",
+              "pm.collectionVariables.set('primerProductoId', body.data[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/products", "host": ["{{baseUrl}}"], "path": ["products"] }
+      }
+    },
+    {
+      "name": "API-02 · Detalle de un producto",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-02 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const p = pm.response.json();",
+              "pm.test('API-02 devuelve el producto pedido', () => {",
+              "  pm.expect(p.id).to.eql(pm.collectionVariables.get('primerProductoId'));",
+              "});",
+              "pm.test('API-02 incluye marca y categoría', () => {",
+              "  pm.expect(p.brand, 'brand').to.be.an('object');",
+              "  pm.expect(p.category, 'category').to.be.an('object');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/products/{{primerProductoId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["products", "{{primerProductoId}}"]
+        }
+      }
+    },
+    {
+      "name": "API-03 · Filtrar por rango de precio",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-03 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "pm.test('API-03 respeta el rango solicitado', () => {",
+              "  pm.response.json().data.forEach((p) => {",
+              "    pm.expect(p.price, `precio de ${p.name}`).to.be.within(1, 20);",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/products?between=price,1,20",
+          "host": ["{{baseUrl}}"],
+          "path": ["products"],
+          "query": [{ "key": "between", "value": "price,1,20" }]
+        }
+      }
+    },
+    {
+      "name": "API-04 · Buscar por nombre",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-04 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const items = pm.response.json().data;",
+              "pm.test('API-04 devuelve coincidencias', () => {",
+              "  pm.expect(items).to.be.an('array').that.is.not.empty;",
+              "});",
+              "pm.test('API-04 todas las coincidencias contienen el término', () => {",
+              "  items.forEach((p) => {",
+              "    pm.expect(p.name.toLowerCase()).to.include('pliers');",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/products/search?q=pliers",
+          "host": ["{{baseUrl}}"],
+          "path": ["products", "search"],
+          "query": [{ "key": "q", "value": "pliers" }]
+        }
+      }
+    },
+    {
+      "name": "API-05 · Listar marcas",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-05 responde 200', () => pm.response.to.have.status(200));",
+              "pm.test('API-05 devuelve marcas con id y nombre', () => {",
+              "  const marcas = pm.response.json();",
+              "  pm.expect(marcas).to.be.an('array').that.is.not.empty;",
+              "  marcas.forEach((m) => {",
+              "    pm.expect(m.id).to.be.a('string').and.not.empty;",
+              "    pm.expect(m.name).to.be.a('string').and.not.empty;",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/brands", "host": ["{{baseUrl}}"], "path": ["brands"] }
+      }
+    },
+    {
+      "name": "API-06 · Producto inexistente devuelve 404",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-06 responde 404', () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/products/id-inexistente-12345",
+          "host": ["{{baseUrl}}"],
+          "path": ["products", "id-inexistente-12345"]
+        }
+      }
+    },
+    {
+      "name": "API-07 · Endpoint protegido sin token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-07 rechaza sin autenticación', () => {",
+              "  pm.expect(pm.response.code).to.be.oneOf([401, 403]);",
+              "});",
+              "pm.test('API-07 no filtra datos del usuario', () => {",
+              "  pm.expect(pm.response.text()).to.not.include('@');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/users/me", "host": ["{{baseUrl}}"], "path": ["users", "me"] }
+      }
+    },
+    {
+      "name": "API-08 · Login con credenciales inválidas",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-08 rechaza la autenticación', () => {",
+              "  pm.expect(pm.response.code).to.be.oneOf([401, 422]);",
+              "});",
+              "pm.test('API-08 no emite token', () => {",
+              "  pm.expect(pm.response.json().access_token).to.be.undefined;",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"no-existe@ejemplo.com\",\n  \"password\": \"clave_incorrecta\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["users", "login"]
+        }
+      }
+    }
+  ]
+}

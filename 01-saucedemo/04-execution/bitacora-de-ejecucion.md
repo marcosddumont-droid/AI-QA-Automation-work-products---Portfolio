@@ -107,6 +107,47 @@ Reporte HTML en [`05-reports/jmeter/`](../05-reports/jmeter/).
 
 ---
 
+## Ciclo 6 — Corrida completa de la matriz de navegadores
+
+Hasta acá los ciclos se habían corrido con `--project=chromium-ui`. Al ejecutar la configuración completa aparecieron los cinco proyectos:
+
+```
+  19 failed
+  52 passed (36.3s)
+```
+
+| Proyecto | Casos | Resultado |
+|---|---|---|
+| `chromium-ui` | 19 | ✅ |
+| `mobile-ui` (Pixel 7) | 19 | ✅ |
+| `api` (Restful-Booker) | 11 | ✅ |
+| `a11y` | 3 | ✅ |
+| `firefox-ui` | 19 | ❌ |
+
+**Los 19 fallos de Firefox son idénticos y duran ~5 ms cada uno:**
+
+```
+Error: browserType.launch: spawn UNKNOWN
+```
+
+Un fallo del 100 % en milisegundos no es un problema de la aplicación: el navegador ni siquiera arranca.
+
+**Diagnóstico:** se ejecutó el binario a mano.
+
+```
+C:\Users\...\ms-playwright\firefox-1532\firefox\firefox.exe --version
+
+ERROR: No se pudo iniciar la aplicación; la configuración en paralelo no es correcta.
+```
+
+"Configuración en paralelo incorrecta" (*side-by-side configuration*) es el mensaje de Windows para **falta el runtime de Visual C++**. Reinstalar el navegador con `playwright install firefox --force` no lo resuelve, porque el problema no está en Playwright.
+
+**Solución:** `winget install Microsoft.VCRedist.2015+.x64`
+
+**Decisión:** se deja `firefox-ui` en la matriz. Quitarlo pondría la suite en verde ocultando que se perdió cobertura real de un navegador. El fallo es del entorno local, está documentado, y en CI (Ubuntu) no se produce.
+
+---
+
 ## Resumen de defectos
 
 | ID | Título | Severidad | Estado |

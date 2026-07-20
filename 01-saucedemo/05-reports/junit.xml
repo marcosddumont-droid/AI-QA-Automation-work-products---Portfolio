@@ -1,0 +1,479 @@
+<testsuites id="" name="" tests="71" failures="0" skipped="0" errors="19" time="36.265328000000004">
+<testsuite name="ui\checkout.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="chromium-ui" tests="6" failures="0" skipped="0" time="26.167" errors="0">
+<testcase name="Flujo de compra › TC-20 compra end-to-end completa @smoke" classname="ui\checkout.spec.ts" time="6.56">
+</testcase>
+<testcase name="Flujo de compra › TC-21 el total incluye el impuesto del 8% @regression" classname="ui\checkout.spec.ts" time="5.726">
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin firstName muestra error @regression" classname="ui\checkout.spec.ts" time="5.332">
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin lastName muestra error @regression" classname="ui\checkout.spec.ts" time="5.097">
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin postalCode muestra error @regression" classname="ui\checkout.spec.ts" time="1.679">
+</testcase>
+<testcase name="Flujo de compra › TC-23 quitar un ítem del carrito baja el subtotal @regression" classname="ui\checkout.spec.ts" time="1.773">
+</testcase>
+</testsuite>
+<testsuite name="ui\inventory.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="chromium-ui" tests="6" failures="0" skipped="0" time="9.665" errors="0">
+<testcase name="Catálogo de productos › TC-10 el inventario lista los 6 productos con precio @smoke" classname="ui\inventory.spec.ts" time="1.467">
+</testcase>
+<testcase name="Catálogo de productos › TC-11 ordenar por precio ascendente @regression" classname="ui\inventory.spec.ts" time="1.723">
+</testcase>
+<testcase name="Catálogo de productos › TC-12 ordenar por precio descendente @regression" classname="ui\inventory.spec.ts" time="1.432">
+</testcase>
+<testcase name="Catálogo de productos › TC-13 ordenar por nombre Z-A @regression" classname="ui\inventory.spec.ts" time="1.508">
+</testcase>
+<testcase name="Catálogo de productos › TC-14 agregar y quitar un producto actualiza el badge @smoke" classname="ui\inventory.spec.ts" time="1.583">
+</testcase>
+<testcase name="Catálogo de productos › TC-15 el carrito conserva los ítems al navegar @regression" classname="ui\inventory.spec.ts" time="1.952">
+</testcase>
+</testsuite>
+<testsuite name="ui\login.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="chromium-ui" tests="7" failures="0" skipped="0" time="9.921" errors="0">
+<testcase name="Autenticación › TC-01 login exitoso redirige al inventario @smoke" classname="ui\login.spec.ts" time="1.31">
+</testcase>
+<testcase name="Autenticación › TC-02 usuario bloqueado no puede ingresar @regression" classname="ui\login.spec.ts" time="1.18">
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Username is required&quot; @regression" classname="ui\login.spec.ts" time="1.544">
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Password is required&quot; @regression" classname="ui\login.spec.ts" time="1.266">
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Username and password do not match any user in this service&quot; @regression" classname="ui\login.spec.ts" time="1.215">
+</testcase>
+<testcase name="Autenticación › TC-04 logout vuelve a la pantalla de login @regression" classname="ui\login.spec.ts" time="2.286">
+</testcase>
+<testcase name="Autenticación › TC-05 el password se enmascara en pantalla @regression" classname="ui\login.spec.ts" time="1.12">
+</testcase>
+</testsuite>
+<testsuite name="ui\checkout.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="firefox-ui" tests="6" failures="0" skipped="0" time="0.037" errors="6">
+<testcase name="Flujo de compra › TC-20 compra end-to-end completa @smoke" classname="ui\checkout.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\checkout-Flujo-de-compra-T-73658-a-end-to-end-completa-smoke-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\checkout.spec.ts:9:3 › Flujo de compra › TC-20 compra end-to-end completa @smoke 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-LbeNpe -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\checkout-Flujo-de-compra-T-73658-a-end-to-end-completa-smoke-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Flujo de compra › TC-21 el total incluye el impuesto del 8% @regression" classname="ui\checkout.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\checkout-Flujo-de-compra-T-799ba-l-impuesto-del-8-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\checkout.spec.ts:30:3 › Flujo de compra › TC-21 el total incluye el impuesto del 8% @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-Y2Zh3C -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\checkout-Flujo-de-compra-T-799ba-l-impuesto-del-8-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin firstName muestra error @regression" classname="ui\checkout.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\checkout-Flujo-de-compra-T-ee139-me-muestra-error-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\checkout.spec.ts:56:5 › Flujo de compra › TC-22 checkout sin firstName muestra error @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-XBYfX4 -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\checkout-Flujo-de-compra-T-ee139-me-muestra-error-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin lastName muestra error @regression" classname="ui\checkout.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\checkout-Flujo-de-compra-T-1826b-me-muestra-error-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\checkout.spec.ts:56:5 › Flujo de compra › TC-22 checkout sin lastName muestra error @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-QutOVG -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\checkout-Flujo-de-compra-T-1826b-me-muestra-error-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin postalCode muestra error @regression" classname="ui\checkout.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\checkout-Flujo-de-compra-T-81187-de-muestra-error-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\checkout.spec.ts:56:5 › Flujo de compra › TC-22 checkout sin postalCode muestra error @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-zKoUqQ -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\checkout-Flujo-de-compra-T-81187-de-muestra-error-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Flujo de compra › TC-23 quitar un ítem del carrito baja el subtotal @regression" classname="ui\checkout.spec.ts" time="0.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\checkout-Flujo-de-compra-T-fceda-baja-el-subtotal-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\checkout.spec.ts:73:3 › Flujo de compra › TC-23 quitar un ítem del carrito baja el subtotal @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-2F8WKx -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\checkout-Flujo-de-compra-T-fceda-baja-el-subtotal-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="ui\inventory.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="firefox-ui" tests="6" failures="0" skipped="0" time="0.032" errors="6">
+<testcase name="Catálogo de productos › TC-10 el inventario lista los 6 productos con precio @smoke" classname="ui\inventory.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\inventory-Catálogo-de-prod-9ebc6--productos-con-precio-smoke-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\inventory.spec.ts:6:3 › Catálogo de productos › TC-10 el inventario lista los 6 productos con precio @smoke 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-iKEQ3Y -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\inventory-Catálogo-de-prod-9ebc6--productos-con-precio-smoke-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Catálogo de productos › TC-11 ordenar por precio ascendente @regression" classname="ui\inventory.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\inventory-Catálogo-de-prod-b8442-recio-ascendente-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\inventory.spec.ts:16:3 › Catálogo de productos › TC-11 ordenar por precio ascendente @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-HeG5iD -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\inventory-Catálogo-de-prod-b8442-recio-ascendente-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Catálogo de productos › TC-12 ordenar por precio descendente @regression" classname="ui\inventory.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\inventory-Catálogo-de-prod-9f211-ecio-descendente-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\inventory.spec.ts:23:3 › Catálogo de productos › TC-12 ordenar por precio descendente @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-tFe5pE -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\inventory-Catálogo-de-prod-9f211-ecio-descendente-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Catálogo de productos › TC-13 ordenar por nombre Z-A @regression" classname="ui\inventory.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\inventory-Catálogo-de-prod-3ddf1-r-por-nombre-Z-A-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\inventory.spec.ts:30:3 › Catálogo de productos › TC-13 ordenar por nombre Z-A @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-i9VPSH -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\inventory-Catálogo-de-prod-3ddf1-r-por-nombre-Z-A-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Catálogo de productos › TC-14 agregar y quitar un producto actualiza el badge @smoke" classname="ui\inventory.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\inventory-Catálogo-de-prod-a89b2-to-actualiza-el-badge-smoke-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\inventory.spec.ts:37:3 › Catálogo de productos › TC-14 agregar y quitar un producto actualiza el badge @smoke 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-jJfFdM -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\inventory-Catálogo-de-prod-a89b2-to-actualiza-el-badge-smoke-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Catálogo de productos › TC-15 el carrito conserva los ítems al navegar @regression" classname="ui\inventory.spec.ts" time="0.006">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\inventory-Catálogo-de-prod-4a6d1-ítems-al-navegar-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\inventory.spec.ts:49:3 › Catálogo de productos › TC-15 el carrito conserva los ítems al navegar @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-1leHna -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\inventory-Catálogo-de-prod-4a6d1-ítems-al-navegar-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="ui\login.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="firefox-ui" tests="7" failures="0" skipped="0" time="0.041" errors="7">
+<testcase name="Autenticación › TC-01 login exitoso redirige al inventario @smoke" classname="ui\login.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-01--85dee-edirige-al-inventario-smoke-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:9:3 › Autenticación › TC-01 login exitoso redirige al inventario @smoke 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-xhhSGv -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-01--85dee-edirige-al-inventario-smoke-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Autenticación › TC-02 usuario bloqueado no puede ingresar @regression" classname="ui\login.spec.ts" time="0.008">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-02--d4547-o-puede-ingresar-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:21:3 › Autenticación › TC-02 usuario bloqueado no puede ingresar @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-OerYOZ -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-02--d4547-o-puede-ingresar-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Username is required&quot; @regression" classname="ui\login.spec.ts" time="0.008">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-03--93cc0-name-is-required-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:31:5 › Autenticación › TC-03 credenciales inválidas → "Username is required" @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-9Vqkpd -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-03--93cc0-name-is-required-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Password is required&quot; @regression" classname="ui\login.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-03--0b3e0-word-is-required-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:31:5 › Autenticación › TC-03 credenciales inválidas → "Password is required" @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-gW0ZGv -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-03--0b3e0-word-is-required-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Username and password do not match any user in this service&quot; @regression" classname="ui\login.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-03--c7d66--in-this-service-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:31:5 › Autenticación › TC-03 credenciales inválidas → "Username and password do not match any user in this service" @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-3cCQiF -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-03--c7d66--in-this-service-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Autenticación › TC-04 logout vuelve a la pantalla de login @regression" classname="ui\login.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-04--cb1b8-antalla-de-login-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:39:3 › Autenticación › TC-04 logout vuelve a la pantalla de login @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-cdciJX -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-04--cb1b8-antalla-de-login-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Autenticación › TC-05 el password se enmascara en pantalla @regression" classname="ui\login.spec.ts" time="0.005">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Autenticación-TC-05--ab979-cara-en-pantalla-regression-firefox-ui\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: spawn UNKNOWN" type="Error">
+<![CDATA[  [firefox-ui] › ui\login.spec.ts:53:3 › Autenticación › TC-05 el password se enmascara en pantalla @regression 
+
+    Error: browserType.launch: spawn UNKNOWN
+    Call log:
+      - <launching> C:\Users\Myway\AppData\Local\ms-playwright\firefox-1532\firefox\firefox.exe -no-remote -headless -profile C:\Users\Myway\AppData\Local\Temp\playwright_firefoxdev_profile-4Q1M7C -juggler-pipe -silent
+
+
+    Error Context: ..\..\..\05-reports\test-results\login-Autenticación-TC-05--ab979-cara-en-pantalla-regression-firefox-ui\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="ui\checkout.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="mobile-ui" tests="6" failures="0" skipped="0" time="13.538" errors="0">
+<testcase name="Flujo de compra › TC-20 compra end-to-end completa @smoke" classname="ui\checkout.spec.ts" time="2.403">
+</testcase>
+<testcase name="Flujo de compra › TC-21 el total incluye el impuesto del 8% @regression" classname="ui\checkout.spec.ts" time="2.726">
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin firstName muestra error @regression" classname="ui\checkout.spec.ts" time="2.358">
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin lastName muestra error @regression" classname="ui\checkout.spec.ts" time="2.115">
+</testcase>
+<testcase name="Flujo de compra › TC-22 checkout sin postalCode muestra error @regression" classname="ui\checkout.spec.ts" time="2.074">
+</testcase>
+<testcase name="Flujo de compra › TC-23 quitar un ítem del carrito baja el subtotal @regression" classname="ui\checkout.spec.ts" time="1.862">
+</testcase>
+</testsuite>
+<testsuite name="ui\inventory.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="mobile-ui" tests="6" failures="0" skipped="0" time="9.949" errors="0">
+<testcase name="Catálogo de productos › TC-10 el inventario lista los 6 productos con precio @smoke" classname="ui\inventory.spec.ts" time="1.63">
+</testcase>
+<testcase name="Catálogo de productos › TC-11 ordenar por precio ascendente @regression" classname="ui\inventory.spec.ts" time="1.52">
+</testcase>
+<testcase name="Catálogo de productos › TC-12 ordenar por precio descendente @regression" classname="ui\inventory.spec.ts" time="1.74">
+</testcase>
+<testcase name="Catálogo de productos › TC-13 ordenar por nombre Z-A @regression" classname="ui\inventory.spec.ts" time="1.659">
+</testcase>
+<testcase name="Catálogo de productos › TC-14 agregar y quitar un producto actualiza el badge @smoke" classname="ui\inventory.spec.ts" time="1.75">
+</testcase>
+<testcase name="Catálogo de productos › TC-15 el carrito conserva los ítems al navegar @regression" classname="ui\inventory.spec.ts" time="1.65">
+</testcase>
+</testsuite>
+<testsuite name="ui\login.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="mobile-ui" tests="7" failures="0" skipped="0" time="9.941" errors="0">
+<testcase name="Autenticación › TC-01 login exitoso redirige al inventario @smoke" classname="ui\login.spec.ts" time="1.447">
+</testcase>
+<testcase name="Autenticación › TC-02 usuario bloqueado no puede ingresar @regression" classname="ui\login.spec.ts" time="1.455">
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Username is required&quot; @regression" classname="ui\login.spec.ts" time="1.441">
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Password is required&quot; @regression" classname="ui\login.spec.ts" time="1.271">
+</testcase>
+<testcase name="Autenticación › TC-03 credenciales inválidas → &quot;Username and password do not match any user in this service&quot; @regression" classname="ui\login.spec.ts" time="1.2">
+</testcase>
+<testcase name="Autenticación › TC-04 logout vuelve a la pantalla de login @regression" classname="ui\login.spec.ts" time="2.105">
+</testcase>
+<testcase name="Autenticación › TC-05 el password se enmascara en pantalla @regression" classname="ui\login.spec.ts" time="1.022">
+</testcase>
+</testsuite>
+<testsuite name="api\booking-crud.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="api" tests="11" failures="0" skipped="0" time="5.967" errors="0">
+<testcase name="API Restful-Booker · CRUD de reservas › API-01 health check responde 201 @smoke" classname="api\booking-crud.spec.ts" time="0.823">
+</testcase>
+<testcase name="API Restful-Booker · CRUD de reservas › API-02 autenticación devuelve un token válido @smoke" classname="api\booking-crud.spec.ts" time="0.76">
+</testcase>
+<testcase name="API Restful-Booker · CRUD de reservas › API-03 crear una reserva devuelve los datos enviados @smoke" classname="api\booking-crud.spec.ts" time="0.747">
+</testcase>
+<testcase name="API Restful-Booker · CRUD de reservas › API-04 recuperar una reserva por id @regression" classname="api\booking-crud.spec.ts" time="0.941">
+</testcase>
+<testcase name="API Restful-Booker · CRUD de reservas › API-05 actualizar una reserva completa (PUT) @regression" classname="api\booking-crud.spec.ts" time="0.537">
+</testcase>
+<testcase name="API Restful-Booker · CRUD de reservas › API-06 actualización parcial (PATCH) solo cambia el campo enviado @regression" classname="api\booking-crud.spec.ts" time="0.527">
+</testcase>
+<testcase name="API Restful-Booker · CRUD de reservas › API-07 eliminar una reserva la deja inaccesible @regression" classname="api\booking-crud.spec.ts" time="0.726">
+</testcase>
+<testcase name="API Restful-Booker · casos negativos › API-08 reserva inexistente devuelve 404 @regression" classname="api\booking-crud.spec.ts" time="0.184">
+</testcase>
+<testcase name="API Restful-Booker · casos negativos › API-09 credenciales incorrectas no devuelven token @regression" classname="api\booking-crud.spec.ts" time="0.181">
+</testcase>
+<testcase name="API Restful-Booker · casos negativos › API-10 PUT sin token es rechazado con 403 @regression" classname="api\booking-crud.spec.ts" time="0.359">
+</testcase>
+<testcase name="API Restful-Booker · casos negativos › API-11 crear reserva con payload inválido no devuelve 200 @regression" classname="api\booking-crud.spec.ts" time="0.182">
+</testcase>
+</testsuite>
+<testsuite name="a11y\accessibility.spec.ts" timestamp="2026-07-20T05:37:08.393Z" hostname="a11y" tests="3" failures="0" skipped="0" time="5.899" errors="0">
+<testcase name="Accesibilidad WCAG 2.1 AA › A11Y-01 la pantalla de login no tiene violaciones críticas @a11y" classname="a11y\accessibility.spec.ts" time="1.989">
+</testcase>
+<testcase name="Accesibilidad WCAG 2.1 AA › A11Y-02 el inventario no tiene violaciones críticas @a11y" classname="a11y\accessibility.spec.ts" time="2.641">
+<properties>
+<property name="fail" value="BUG-006: el select de ordenamiento no tiene nombre accesible">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\accessibility-Accesibilida-f63ff-e-violaciones-críticas-a11y-a11y\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Accesibilidad WCAG 2.1 AA › A11Y-03 el login es operable solo con teclado @a11y" classname="a11y\accessibility.spec.ts" time="1.269">
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="ParaBank · Servicios REST" tests="5" time="1.698">
+  <testsuite name="API-01 · Detalle de cuenta" id="de80e975-7aa4-4f59-981c-96290b921e08" timestamp="2026-07-20T05:25:30.177Z" tests="4" failures="0" errors="0" time="0.904">
+    <testcase name="API-01 responde 200" time="0.904" classname="Api01DetalleDeCuenta"/>
+    <testcase name="API-01 devuelve la cuenta solicitada" time="0.904" classname="Api01DetalleDeCuenta"/>
+    <testcase name="API-01 el saldo es numérico" time="0.904" classname="Api01DetalleDeCuenta"/>
+    <testcase name="API-01 el tipo de cuenta es conocido" time="0.904" classname="Api01DetalleDeCuenta"/>
+  </testsuite>
+  <testsuite name="API-02 · Transacciones de la cuenta" id="856ec4c2-69ed-4a74-b774-981862c2c6dc" timestamp="2026-07-20T05:25:30.177Z" tests="3" failures="0" errors="0" time="0.202">
+    <testcase name="API-02 responde 200" time="0.202" classname="Api02TransaccionesDeLaCuenta"/>
+    <testcase name="API-02 devuelve una lista" time="0.202" classname="Api02TransaccionesDeLaCuenta"/>
+    <testcase name="API-02 cada transacción cumple el contrato" time="0.202" classname="Api02TransaccionesDeLaCuenta"/>
+  </testsuite>
+  <testsuite name="API-03 · Detalle del cliente" id="7c28c4ff-5fc3-4772-972a-7e7e65254cac" timestamp="2026-07-20T05:25:30.177Z" tests="3" failures="0" errors="0" time="0.197">
+    <testcase name="API-03 responde 200" time="0.197" classname="Api03DetalleDelCliente"/>
+    <testcase name="API-03 devuelve el cliente encadenado desde API-01" time="0.197" classname="Api03DetalleDelCliente"/>
+    <testcase name="API-03 incluye nombre y dirección" time="0.197" classname="Api03DetalleDelCliente"/>
+  </testsuite>
+  <testsuite name="API-04 · Cuentas del cliente" id="78ecddf9-b814-4e43-b4bc-43e6074b8fc6" timestamp="2026-07-20T05:25:30.177Z" tests="3" failures="0" errors="0" time="0.199">
+    <testcase name="API-04 responde 200" time="0.199" classname="Api04CuentasDelCliente"/>
+    <testcase name="API-04 devuelve al menos una cuenta" time="0.199" classname="Api04CuentasDelCliente"/>
+    <testcase name="API-04 todas pertenecen al cliente consultado" time="0.199" classname="Api04CuentasDelCliente"/>
+  </testsuite>
+  <testsuite name="API-05 · Cuenta inexistente" id="e6e9f245-dfb4-4263-a20a-691b326ace40" timestamp="2026-07-20T05:25:30.177Z" tests="2" failures="0" errors="0" time="0.196">
+    <testcase name="API-05 rechaza la consulta" time="0.196" classname="Api05CuentaInexistente"/>
+    <testcase name="API-05 no devuelve datos de cuenta" time="0.196" classname="Api05CuentaInexistente"/>
+  </testsuite>
+</testsuites>

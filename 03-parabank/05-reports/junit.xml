@@ -1,0 +1,46 @@
+<testsuites id="" name="" tests="19" failures="0" skipped="0" errors="0" time="22.271749">
+<testsuite name="ui\autenticacion.spec.ts" timestamp="2026-07-20T05:38:41.041Z" hostname="chromium-ui" tests="8" failures="0" skipped="0" time="18.278" errors="0">
+<testcase name="Autenticación › TC-01 registro de un cliente nuevo e inicio de sesión automático @smoke" classname="ui\autenticacion.spec.ts" time="3.081">
+</testcase>
+<testcase name="Autenticación › TC-02 el registro rechaza un usuario ya existente @regression" classname="ui\autenticacion.spec.ts" time="2.618">
+</testcase>
+<testcase name="Autenticación › TC-03 el registro exige los campos obligatorios @regression" classname="ui\autenticacion.spec.ts" time="1.932">
+</testcase>
+<testcase name="Autenticación › TC-04 login con credenciales válidas @smoke" classname="ui\autenticacion.spec.ts" time="2.082">
+</testcase>
+<testcase name="Autenticación › TC-05 login con contraseña incorrecta @regression" classname="ui\autenticacion.spec.ts" time="1.868">
+</testcase>
+<testcase name="Autenticación › TC-06 login con campos vacíos @regression" classname="ui\autenticacion.spec.ts" time="1.974">
+</testcase>
+<testcase name="Autenticación › TC-07 cerrar sesión vuelve a la portada @regression" classname="ui\autenticacion.spec.ts" time="3.051">
+</testcase>
+<testcase name="Autenticación › TC-08 la contraseña se enmascara en pantalla @regression" classname="ui\autenticacion.spec.ts" time="1.672">
+</testcase>
+</testsuite>
+<testsuite name="ui\transferencias.spec.ts" timestamp="2026-07-20T05:38:41.041Z" hostname="chromium-ui" tests="5" failures="0" skipped="0" time="21.081" errors="0">
+<testcase name="Cuentas y transferencias › TC-20 un cliente nuevo arranca con una cuenta y saldo positivo @smoke" classname="ui\transferencias.spec.ts" time="3.705">
+</testcase>
+<testcase name="Cuentas y transferencias › TC-21 abrir una segunda cuenta la agrega al resumen @regression" classname="ui\transferencias.spec.ts" time="4.278">
+</testcase>
+<testcase name="Cuentas y transferencias › TC-22 una transferencia mueve el saldo exacto entre cuentas @smoke" classname="ui\transferencias.spec.ts" time="6.544">
+</testcase>
+<testcase name="Cuentas y transferencias › TC-23 la transferencia rechaza un monto vacío @regression" classname="ui\transferencias.spec.ts" time="3.211">
+</testcase>
+<testcase name="Cuentas y transferencias › TC-24 el detalle de una cuenta muestra sus movimientos @regression" classname="ui\transferencias.spec.ts" time="3.343">
+</testcase>
+</testsuite>
+<testsuite name="api\servicios.spec.ts" timestamp="2026-07-20T05:38:41.041Z" hostname="api" tests="6" failures="0" skipped="0" time="1.676" errors="0">
+<testcase name="API · Servicios de ParaBank › API-01 consultar una cuenta existente devuelve su detalle @smoke" classname="api\servicios.spec.ts" time="0.605">
+</testcase>
+<testcase name="API · Servicios de ParaBank › API-02 el listado de transacciones de una cuenta responde 200 @regression" classname="api\servicios.spec.ts" time="0.21">
+</testcase>
+<testcase name="API · Servicios de ParaBank › API-03 cada transacción cumple el contrato esperado @regression" classname="api\servicios.spec.ts" time="0.228">
+</testcase>
+<testcase name="API · Servicios de ParaBank › API-04 una cuenta inexistente no devuelve datos @regression" classname="api\servicios.spec.ts" time="0.204">
+</testcase>
+<testcase name="API · Servicios de ParaBank › API-05 buscar transacciones por monto @regression" classname="api\servicios.spec.ts" time="0.218">
+</testcase>
+<testcase name="API · Servicios de ParaBank › API-06 los clientes se consultan por id @regression" classname="api\servicios.spec.ts" time="0.211">
+</testcase>
+</testsuite>
+</testsuites>

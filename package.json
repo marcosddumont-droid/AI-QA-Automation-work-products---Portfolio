@@ -11,7 +11,7 @@
     "test:02": "playwright test --config=02-practice-software-testing/03-automation/playwright/playwright.config.ts",
     "test:03": "playwright test --config=03-parabank/03-automation/playwright/playwright.config.ts",
     "test:05": "playwright test --config=05-the-internet/03-automation/playwright/playwright.config.ts",
-    "test:04": "cypress run --project 04-orangehrm/03-automation/cypress",
+    "test:04": "node tools/run-cypress.mjs",
     "test:04:open": "cypress open --project 04-orangehrm/03-automation/cypress",
 
     "test:playwright": "npm run test:01 && npm run test:02 && npm run test:03 && npm run test:05",

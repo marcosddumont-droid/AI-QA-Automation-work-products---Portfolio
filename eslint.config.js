@@ -46,8 +46,26 @@ export default tseslint.config(
     },
   },
   {
-    files: ['tools/**/*.js'],
+    files: ['tools/**/*.js', 'tools/**/*.mjs'],
     languageOptions: { globals: globalsNode },
+  },
+  {
+    // Suite de Cypress: corre dentro del navegador con sus propios globals.
+    files: ['**/cypress/**/*.js', '**/cypress.config.js'],
+    languageOptions: {
+      globals: {
+        ...globalsNode,
+        cy: 'readonly',
+        Cypress: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        before: 'readonly',
+        after: 'readonly',
+        expect: 'readonly',
+      },
+    },
   },
   {
     // Los scripts de k6 corren en su propio runtime, no en Node.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Practice Software Testing · API" tests="8" time="6.136">
+  <testsuite name="API-01 · Listar productos" id="468bc3c7-cc4d-4ace-bf3a-7119b2a2761f" timestamp="2026-07-20T05:24:43.793Z" tests="3" failures="0" errors="0" time="0.799">
+    <testcase name="API-01 responde 200" time="0.799" classname="Api01ListarProductos"/>
+    <testcase name="API-01 la respuesta viene paginada" time="0.799" classname="Api01ListarProductos"/>
+    <testcase name="API-01 cada producto cumple el contrato" time="0.799" classname="Api01ListarProductos"/>
+  </testsuite>
+  <testsuite name="API-02 · Detalle de un producto" id="173ed49c-3981-48d3-b955-faae4af607d4" timestamp="2026-07-20T05:24:43.793Z" tests="3" failures="0" errors="0" time="0.755">
+    <testcase name="API-02 responde 200" time="0.755" classname="Api02DetalleDeUnProducto"/>
+    <testcase name="API-02 devuelve el producto pedido" time="0.755" classname="Api02DetalleDeUnProducto"/>
+    <testcase name="API-02 incluye marca y categoría" time="0.755" classname="Api02DetalleDeUnProducto"/>
+  </testsuite>
+  <testsuite name="API-03 · Filtrar por rango de precio" id="975d9c18-540f-40b2-a449-33e1e7903ea0" timestamp="2026-07-20T05:24:43.793Z" tests="2" failures="0" errors="0" time="0.800">
+    <testcase name="API-03 responde 200" time="0.800" classname="Api03FiltrarPorRangoDePrecio"/>
+    <testcase name="API-03 respeta el rango solicitado" time="0.800" classname="Api03FiltrarPorRangoDePrecio"/>
+  </testsuite>
+  <testsuite name="API-04 · Buscar por nombre" id="d929f5ab-6588-4961-b04e-cafc70777690" timestamp="2026-07-20T05:24:43.793Z" tests="3" failures="0" errors="0" time="0.764">
+    <testcase name="API-04 responde 200" time="0.764" classname="Api04BuscarPorNombre"/>
+    <testcase name="API-04 devuelve coincidencias" time="0.764" classname="Api04BuscarPorNombre"/>
+    <testcase name="API-04 todas las coincidencias contienen el término" time="0.764" classname="Api04BuscarPorNombre"/>
+  </testsuite>
+  <testsuite name="API-05 · Listar marcas" id="df5ff897-12d1-4779-af03-d4611dc231b3" timestamp="2026-07-20T05:24:43.793Z" tests="2" failures="0" errors="0" time="0.795">
+    <testcase name="API-05 responde 200" time="0.795" classname="Api05ListarMarcas"/>
+    <testcase name="API-05 devuelve marcas con id y nombre" time="0.795" classname="Api05ListarMarcas"/>
+  </testsuite>
+  <testsuite name="API-06 · Producto inexistente devuelve 404" id="cbdee9c3-2e30-4537-8844-07f61a06aa86" timestamp="2026-07-20T05:24:43.793Z" tests="1" failures="0" errors="0" time="0.726">
+    <testcase name="API-06 responde 404" time="0.726" classname="Api06ProductoInexistenteDevuelve404"/>
+  </testsuite>
+  <testsuite name="API-07 · Endpoint protegido sin token" id="807a4afb-480b-4c0f-81d1-524b4a1ab8ef" timestamp="2026-07-20T05:24:43.793Z" tests="2" failures="0" errors="0" time="0.732">
+    <testcase name="API-07 rechaza sin autenticación" time="0.732" classname="Api07EndpointProtegidoSinToken"/>
+    <testcase name="API-07 no filtra datos del usuario" time="0.732" classname="Api07EndpointProtegidoSinToken"/>
+  </testsuite>
+  <testsuite name="API-08 · Login con credenciales inválidas" id="e858d4f4-82d4-4d06-aeb2-7ed2a9618cdb" timestamp="2026-07-20T05:24:43.793Z" tests="2" failures="0" errors="0" time="0.765">
+    <testcase name="API-08 rechaza la autenticación" time="0.765" classname="Api08LoginConCredencialesInvalidas"/>
+    <testcase name="API-08 no emite token" time="0.765" classname="Api08LoginConCredencialesInvalidas"/>
+  </testsuite>
+</testsuites>

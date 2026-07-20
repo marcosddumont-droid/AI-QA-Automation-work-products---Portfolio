@@ -1,0 +1,191 @@
+{
+  "info": {
+    "name": "ParaBank · Servicios REST",
+    "description": "Cobertura de los servicios REST de ParaBank.\n\nSolo operaciones de LECTURA: no se generan movimientos de dinero ni se crean clientes sobre una base compartida.\n\nEjecución:\n  newman run parabank-api.postman_collection.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://parabank.parasoft.com/parabank/services/bank" },
+    { "key": "cuenta", "value": "13344" },
+    { "key": "clienteId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "API-01 · Detalle de cuenta",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-01 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const cuenta = pm.response.json();",
+              "",
+              "pm.test('API-01 devuelve la cuenta solicitada', () => {",
+              "  pm.expect(cuenta.id).to.eql(Number(pm.collectionVariables.get('cuenta')));",
+              "});",
+              "",
+              "pm.test('API-01 el saldo es numérico', () => {",
+              "  pm.expect(cuenta.balance).to.be.a('number');",
+              "});",
+              "",
+              "pm.test('API-01 el tipo de cuenta es conocido', () => {",
+              "  pm.expect(cuenta.type).to.be.oneOf(['CHECKING', 'SAVINGS', 'LOAN']);",
+              "});",
+              "",
+              "pm.collectionVariables.set('clienteId', cuenta.customerId);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/accounts/{{cuenta}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["accounts", "{{cuenta}}"]
+        }
+      }
+    },
+    {
+      "name": "API-02 · Transacciones de la cuenta",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-02 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const transacciones = pm.response.json();",
+              "",
+              "pm.test('API-02 devuelve una lista', () => {",
+              "  pm.expect(transacciones).to.be.an('array');",
+              "});",
+              "",
+              "pm.test('API-02 cada transacción cumple el contrato', () => {",
+              "  transacciones.slice(0, 10).forEach((t) => {",
+              "    pm.expect(t.id, 'id').to.be.a('number');",
+              "    pm.expect(t.amount, 'amount').to.be.a('number');",
+              "    pm.expect(t.type, 'type').to.be.oneOf(['Credit', 'Debit']);",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/accounts/{{cuenta}}/transactions",
+          "host": ["{{baseUrl}}"],
+          "path": ["accounts", "{{cuenta}}", "transactions"]
+        }
+      }
+    },
+    {
+      "name": "API-03 · Detalle del cliente",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-03 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const cliente = pm.response.json();",
+              "",
+              "pm.test('API-03 devuelve el cliente encadenado desde API-01', () => {",
+              "  pm.expect(cliente.id).to.eql(Number(pm.collectionVariables.get('clienteId')));",
+              "});",
+              "",
+              "pm.test('API-03 incluye nombre y dirección', () => {",
+              "  pm.expect(cliente.firstName).to.be.a('string').and.not.empty;",
+              "  pm.expect(cliente.lastName).to.be.a('string').and.not.empty;",
+              "  pm.expect(cliente.address).to.be.an('object');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/customers/{{clienteId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers", "{{clienteId}}"]
+        }
+      }
+    },
+    {
+      "name": "API-04 · Cuentas del cliente",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-04 responde 200', () => pm.response.to.have.status(200));",
+              "",
+              "const cuentas = pm.response.json();",
+              "",
+              "pm.test('API-04 devuelve al menos una cuenta', () => {",
+              "  pm.expect(cuentas).to.be.an('array').that.is.not.empty;",
+              "});",
+              "",
+              "pm.test('API-04 todas pertenecen al cliente consultado', () => {",
+              "  const esperado = Number(pm.collectionVariables.get('clienteId'));",
+              "  cuentas.forEach((c) => pm.expect(c.customerId).to.eql(esperado));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/customers/{{clienteId}}/accounts",
+          "host": ["{{baseUrl}}"],
+          "path": ["customers", "{{clienteId}}", "accounts"]
+        }
+      }
+    },
+    {
+      "name": "API-05 · Cuenta inexistente",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Comportamiento real verificado: responde 400, no 404.",
+              "// Discutible desde el diseño REST (el recurso no existe, la",
+              "// petición está bien formada), y por eso se documenta como BUG-201.",
+              "pm.test('API-05 rechaza la consulta', () => {",
+              "  pm.expect(pm.response.code).to.eql(400);",
+              "});",
+              "",
+              "pm.test('API-05 no devuelve datos de cuenta', () => {",
+              "  pm.expect(pm.response.text()).to.not.include('\"balance\"');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/accounts/99999999",
+          "host": ["{{baseUrl}}"],
+          "path": ["accounts", "99999999"]
+        }
+      }
+    }
+  ]
+}

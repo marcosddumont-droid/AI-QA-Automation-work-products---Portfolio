@@ -23,11 +23,31 @@ SauceDemo tiene **defectos inyectados a propósito** y usuarios que se comportan
 
 | Suite | Herramienta | Resultado | Detalle |
 |---|---|---|---|
-| E2E UI | Playwright | **19/19** ✅ | Chromium |
-| API | Newman | **20/20 aserciones** ✅ | 7 requests |
+| E2E UI · Chromium | Playwright | **19/19** ✅ | |
+| E2E UI · mobile (Pixel 7) | Playwright | **19/19** ✅ | Emulación de viewport |
+| E2E UI · Firefox | Playwright | **0/19** ⚠️ | Bloqueado por el entorno, ver abajo |
+| API (Restful-Booker) | Playwright | **11/11** ✅ | CRUD + casos negativos |
+| API (mock) | Newman | **20/20 aserciones** ✅ | 7 requests |
 | Carga (mock) | k6 | **4614/4614 checks** ✅ | p95 = 95 ms |
 | Carga (mock) | JMeter | **308 muestras, 0 errores** ✅ | avg 74 ms |
 | Accesibilidad | axe-core | **3/3** ✅ | 1 fallo esperado documentado |
+
+**Total Playwright: 52/71.**
+
+### Sobre los 19 fallos de Firefox
+
+No son un defecto de la aplicación ni de los tests. El binario de Firefox no arranca en la máquina donde se corrió:
+
+```
+browserType.launch: spawn UNKNOWN
+→ "la configuración en paralelo no es correcta"
+```
+
+Es la forma que tiene Windows de informar que **falta el runtime de Visual C++**. Los mismos 19 casos pasan en Chromium y en viewport mobile, y en CI (Ubuntu) el problema no existe.
+
+**Solución:** `winget install Microsoft.VCRedist.2015+.x64`
+
+Se deja el proyecto `firefox-ui` en la matriz en lugar de removerlo: sacar cobertura real para que el número quede prolijo es justamente lo que no corresponde hacer.
 
 Los reportes están en [`05-reports/`](05-reports/).
 

@@ -23,6 +23,8 @@ jobs:
             script: test:01
           - sitio: 02-practice-software-testing
             script: test:02
+          - sitio: 03-parabank
+            script: test:03
           - sitio: 05-the-internet
             script: test:05
 
@@ -49,6 +51,27 @@ jobs:
         with:
           name: reporte-${{ matrix.sitio }}
           path: ${{ matrix.sitio }}/05-reports/
+          retention-days: 14
+
+  cypress:
+    name: E2E · 04-orangehrm (Cypress)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Ejecutar suite Cypress
+        run: npm run test:04
+      - name: Publicar evidencia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-04-orangehrm
+          path: 04-orangehrm/05-reports/
           retention-days: 14
 
   api-postman:
